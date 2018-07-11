@@ -4,7 +4,8 @@ This is a simple AIS parser that reads a UDP stream (from aisdispatcher) and pos
 
 aprs.fi accepts the ais message in the following format:
 
-`{
+```json
+{
  "protocol": "jsonais",
  "encodetime": "20131231235959",
  "groups": [
@@ -33,7 +34,8 @@ aprs.fi accepts the ais message in the following format:
    ]
   }
  ]
-}`
+}
+```
 
 ## usage:
 edit settings.py to include your aprs.fi account name and SeCrEtKeY
