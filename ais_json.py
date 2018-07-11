@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+from termcolor import colored
 from settings import URL, NAME
 import json
 import ais.stream
@@ -81,10 +84,11 @@ while True:
       r = requests.post(URL, files={'jsonais': (None, post)})
       #dump non common packets for debugging
       if parsed['id'] not in (1,2,3,4):
-        print '---'
-        print 'NMEA:', parsed['nmea']
-        print 'Parsed:', parsed
-        print 'Post:', post
-        print 'Result:', json.loads(r.text)['description']
+        print colored('-- Uncommon packet recieved\n', 'red')
+        print colored('id:', 'green'), parsed['id']
+        print colored('NMEA:', 'green'), parsed['nmea']
+        print colored('Parsed:', 'green'), parsed
+        print colored('Post:', 'green'), post
+        print colored('Result:', 'green'), json.loads(r.text)['description']
     except requests.exceptions.RequestException as e:
       print e
