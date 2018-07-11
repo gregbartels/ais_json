@@ -1,6 +1,6 @@
 # ais_json
 
-This is a simple AIS parser that reads a UDP stream (from aisdispatcher) and posts the output via JSON AIS to aprs.fi
+This is a simple AIS parser that reads a UDP stream from [aisdispatcher](http://www.aishub.net/ais-dispatcher) parses it into JSON and posts the output via http to the aprs.fi endpoint.
 
 aprs.fi accepts the ais message in the following format:
 
@@ -45,7 +45,11 @@ Your AIS SeCrEtKeY can be found in https://aprs.fi/account/ under "AIS password"
 
 ## install
 
+* git clone https://github.com/hsiboy/ais_json.git
 * pip install libais
 * pip install termcolor
+* $ cd ais_json
+* $ ./ais_json.py &
+
 
 
