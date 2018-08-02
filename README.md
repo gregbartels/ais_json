@@ -2,6 +2,8 @@
 
 This is a simple AIS parser that reads a UDP stream from [aisdispatcher](http://www.aishub.net/ais-dispatcher) parses it into JSON and posts the output via http to the aprs.fi endpoint.
 
+requires libais: https://pypi.org/project/libais/
+
 aprs.fi accepts the ais message in the following format:
 
 ```json
