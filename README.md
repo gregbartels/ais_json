@@ -40,6 +40,13 @@ aprs.fi accepts the ais message in the following format:
 ```
 
 ## usage:
+
+1. Receiving the data from the receiver: use AISDispatcher (http://www.aishub.net/ais-dispatcher)  to recieve the stream on your machine.
+
+2. Decoding raw NMEA messages: use ais_json to decode and upload data to APRS.fi. 
+
+This code reads the AISdispatcher UCP stream, so for example, set AISDIspatcher output to  `PORT = 5000, IP='127.0.0.1'` this script  (ais_json) needs to be running in the background.
+
 edit settings.py to include your aprs.fi account name and SeCrEtKeY
 
 Your AIS SeCrEtKeY can be found in https://aprs.fi/account/ under "AIS password"
@@ -50,7 +57,9 @@ Your AIS SeCrEtKeY can be found in https://aprs.fi/account/ under "AIS password"
 * git clone https://github.com/hsiboy/ais_json.git
 * pip install libais
 * pip install termcolor
-* $ cd ais_json
+* $ cd ais_js/
+
+Run in the background
 * $ ./ais_json.py &
 
 
